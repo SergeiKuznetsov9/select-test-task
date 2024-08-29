@@ -1,7 +1,11 @@
 import { ChevronsBlock } from "./shared/ChevronsBlock/chevronsBlock";
 import { ChipsItem } from "./shared/ChipsItem/chipsItem";
+import { ControlWrapper } from "./shared/ControlWrapper/controlWrapper";
 import { DropdownBlock } from "./shared/DropdownBlock/dropdownBlock";
 import { ListItem } from "./shared/ListItem/listItem";
+import { PlaceholderControl } from "./shared/PlaceholderControl/placeholderControl";
+import { SearchingInput } from "./shared/SearchingInput/searchingInput";
+import { SingleSelectControl } from "./shared/SingleSelectControl/singleSelectControl";
 
 function App() {
   return (
@@ -20,6 +24,23 @@ function App() {
         <ListItem option="option 9" isActive={false} />
       </DropdownBlock>
       <ChipsItem option="option 1" />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <ControlWrapper />
+      <ControlWrapper error={true} />
+      <ControlWrapper disabled={true} />
+      <br />
+      <PlaceholderControl placeholder={"Выберите значение"} />
+      <PlaceholderControl placeholder={"Выберите значение"} isTyping />
+      <SingleSelectControl option={"Select Item"} disabled />
+      <SingleSelectControl option={"Select Item"} />
+      <SearchingInput />
     </div>
   );
 }

@@ -1,0 +1,21 @@
+.ControlWrapper {
+    width: 292px;
+    height: 44px;
+    border-radius: 8px;
+    border: 1px solid #1308171A;
+    transition: box-shadow, .3s;
+}
+
+.controlWrapperHoverStyles {
+    background-color: #FFFFFF;
+}
+
+.controlWrapperHoverStyles:hover {
+    border: 1px solid #6E328C7A;
+    box-shadow: 0px 0px 0px 3px #71308E1F;
+}
+
+.controlWrapperError {
+    border: 1px solid #E8433D;
+    box-shadow: 0px 0px 0px 3px #E8433D1F;
+}

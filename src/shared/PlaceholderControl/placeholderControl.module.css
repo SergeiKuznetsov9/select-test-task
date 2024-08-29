@@ -1,0 +1,15 @@
+.PlaceholderControl {
+    height: 22px;
+    width: 234px;
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.012em;
+    color: #13081766;
+    user-select: none;
+}
+
+.searchTyping {
+    color: #130817E5;
+}
