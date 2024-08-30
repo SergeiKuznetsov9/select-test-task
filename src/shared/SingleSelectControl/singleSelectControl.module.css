@@ -6,10 +6,10 @@
     font-weight: 500;
     line-height: 22px;
     letter-spacing: -0.012em;
-    color: #13081766;
+    color: #130817E5;
     user-select: none;
 }
 
-.disabledControl {
-    color: #130817E5;
+.dimColor {
+    color: #13081766;
 }

@@ -1,11 +1,17 @@
 .SearchingInput {
     min-width: 2px;
+    max-width: 230px;
     height: 22px;
-    border: 1px solid black;
     font-family: Inter;
     font-size: 15px;
     font-weight: 500;
     line-height: 22px;
     letter-spacing: -0.012em;
     color: #130817E5;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.SearchingInput:focus-visible {
+    outline: none;
 }

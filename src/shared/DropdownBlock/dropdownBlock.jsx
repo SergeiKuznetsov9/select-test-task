@@ -1,9 +1,23 @@
+import classNames from "classnames";
+
 import styles from "./dropdownBlock.module.css";
 
-export const DropdownBlock = ({ children }) => {
+export const DropdownBlock = ({ className, isOpened, children }) => {
   return (
-    <div className={styles.DropdownBlock}>
-      <div className={styles.dropdownContent}>{children}</div>
+    <div
+      className={classNames(
+        styles.DropdownBlock,
+        { [styles.opendBlock]: isOpened },
+        className
+      )}
+    >
+      <div
+        className={classNames(styles.dropdownContent, {
+          [styles.openedDropdownContent]: isOpened,
+        })}
+      >
+        {children}
+      </div>
     </div>
   );
 };
