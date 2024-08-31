@@ -9,28 +9,13 @@ import { ListItem } from "../../shared/ListItem/listItem";
 import { CreateItem } from "../../shared/CreateItem/createItem";
 import { MultiSelectControl } from "../../shared/MultiSelectControl/multiSelectControl";
 import { ChipsItem } from "../../shared/ChipsItem/chipsItem";
+import {
+  defineIsOptionSelected,
+  defineKey,
+  filterOptions,
+} from "../../utils/utils";
 
 import styles from "./multiSelect.module.css";
-
-const filterOptions = (options, nameKey, searchingText) => {
-  if (!searchingText) {
-    return options;
-  }
-
-  return options.filter((option) => {
-    const name = nameKey ? option[nameKey].toLowerCase() : option.toLowerCase();
-    return name.includes(searchingText.toLowerCase());
-  });
-};
-
-const defineIsOptionSelected = (valuesStack, option, nameKey) =>
-  Boolean(
-    valuesStack.find(
-      (selectedOption) =>
-        (nameKey ? selectedOption[nameKey] : selectedOption) ===
-        (nameKey ? option[nameKey] : option)
-    )
-  );
 
 export const MultiSelect = ({
   label,
@@ -70,8 +55,7 @@ export const MultiSelect = ({
     if (isOptionSelected) {
       newValue = value.filter((selectedOption) => {
         return (
-          (nameKey ? selectedOption[nameKey] : selectedOption) !==
-          (nameKey ? option[nameKey] : option)
+          defineKey(selectedOption, nameKey) !== defineKey(option, nameKey)
         );
       });
     } else {
@@ -90,12 +74,11 @@ export const MultiSelect = ({
   };
 
   const onRemoveOption = (option) => {
-    const optionName = nameKey ? option[nameKey] : option;
+    const optionName = defineKey(option, nameKey);
 
     onSelect(
       value.filter(
-        (selectedOption) =>
-          (nameKey ? selectedOption[nameKey] : selectedOption) !== optionName
+        (selectedOption) => defineKey(selectedOption, nameKey) !== optionName
       )
     );
   };
@@ -161,7 +144,7 @@ export const MultiSelect = ({
                   <ChipsItem
                     option={label}
                     nameKey={nameKey}
-                    key={nameKey ? label[nameKey] : label}
+                    key={defineKey(label, nameKey)}
                     removeOption={onRemoveOption}
                   />
                 ))}
@@ -193,10 +176,9 @@ export const MultiSelect = ({
                   nameKey
                 );
               }
-
               return (
                 <ListItem
-                  key={nameKey ? option[nameKey] : option}
+                  key={defineKey(option, nameKey)}
                   option={option}
                   nameKey={nameKey}
                   isActive={isOptionSelected}

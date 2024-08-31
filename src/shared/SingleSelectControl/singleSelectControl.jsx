@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import styles from "./singleSelectControl.module.css";
+import { defineKey } from "../../utils/utils";
 
 export const SingleSelectControl = ({
   option,
@@ -13,7 +14,7 @@ export const SingleSelectControl = ({
         [styles.dimColor]: disabled | isSelectOpened,
       })}
     >
-      {nameKey ? option[nameKey] : option}
+      {defineKey(option, nameKey)}
     </div>
   );
 };

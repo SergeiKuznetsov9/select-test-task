@@ -2,6 +2,7 @@ import classNames from "classnames";
 
 import CheckedIcon from "../../assets/icons/checkbox-list-checked.png";
 import UncheckedIcon from "../../assets/icons/checkbox-list-unchecked.png";
+import { defineKey } from "../../utils/utils";
 
 import styles from "./listItem.module.css";
 
@@ -13,8 +14,7 @@ export const ListItem = ({ option, nameKey, isActive, multiple, onClick }) => {
         [styles.nonActiveItem]: !isActive,
       })}
     >
-      <span>{nameKey ? option[nameKey] : option}</span>
-
+      <span>{defineKey(option, nameKey)}</span>
       {multiple && (
         <>
           {isActive ? (

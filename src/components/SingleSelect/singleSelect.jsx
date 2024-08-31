@@ -8,19 +8,9 @@ import { SingleDropdownBlock as DefaultDropdownBlock } from "../../shared/Dropdo
 import { ListItem } from "../../shared/ListItem/listItem";
 import { SingleSelectControl } from "../../shared/SingleSelectControl/singleSelectControl";
 import { CreateItem } from "../../shared/CreateItem/createItem";
+import { defineKey, filterOptions } from "../../utils/utils";
 
 import styles from "./singleSelect.module.css";
-
-const filterOptions = (options, nameKey, searchingText) => {
-  if (!searchingText) {
-    return options;
-  }
-
-  return options.filter((option) => {
-    const name = nameKey ? option[nameKey].toLowerCase() : option.toLowerCase();
-    return name.includes(searchingText.toLowerCase());
-  });
-};
 
 export const SingleSelect = ({
   label,
@@ -134,13 +124,13 @@ export const SingleSelect = ({
               let selectedOptionName;
 
               if (value) {
-                currentOptionName = nameKey ? option[nameKey] : option;
-                selectedOptionName = nameKey ? value[nameKey] : value;
+                currentOptionName = defineKey(option, nameKey);
+                selectedOptionName = defineKey(value, nameKey);
               }
 
               return (
                 <ListItem
-                  key={nameKey ? option[nameKey] : option}
+                  key={defineKey(option, nameKey)}
                   option={option}
                   nameKey={nameKey}
                   isActive={value && currentOptionName === selectedOptionName}
