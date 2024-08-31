@@ -4,7 +4,7 @@ import { ControlWrapper } from "../../shared/ControlWrapper/controlWrapper";
 import { PlaceholderControl } from "../../shared/PlaceholderControl/placeholderControl";
 import { SearchingInput } from "../../shared/SearchingInput/searchingInput";
 import { ChevronsBlock } from "../../shared/ChevronsBlock/chevronsBlock";
-import { DropdownBlock as DefaultDropdownBlock } from "../../shared/DropdownBlock/dropdownBlock";
+import { SingleDropdownBlock as DefaultDropdownBlock } from "../../shared/DropdownBlock/dropdownBlock";
 import { ListItem } from "../../shared/ListItem/listItem";
 import { SingleSelectControl } from "../../shared/SingleSelectControl/singleSelectControl";
 import { CreateItem } from "../../shared/CreateItem/createItem";

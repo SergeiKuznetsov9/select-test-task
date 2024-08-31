@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { SingleSelect } from "./components/SingleSelect/singleSelect";
-import { CustomDropdownBlock } from "./shared/CustomDropdown/customDropdownBlock";
+// import { CustomDropdownBlock } from "./shared/CustomDropdown/customDropdownBlock";
 import { fruitsList, fruitsListFlat } from "./assets/mockData/mockData";
+import { MultiSelect } from "./components/MultiSelect/multiSelect";
+// import { SingleSelect } from "./components/SingleSelect/singleSelect";
 
 function App() {
   const [options, setOptions] = useState(fruitsList);
@@ -23,7 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <SingleSelect
+      {/* <SingleSelect
         label="Single Select"
         placeholder="Выбери значение"
         value={value}
@@ -36,6 +37,24 @@ function App() {
 
       <SingleSelect
         label="Single Select"
+        placeholder="Выбери значение"
+        value={valueFlat}
+        onSelect={handleSelectFlat}
+        options={fruitsListFlat}
+      /> */}
+
+      <MultiSelect
+        label="Multi Select"
+        placeholder="Выбери значение"
+        value={value}
+        onSelect={handleSelect}
+        options={options}
+        nameKey="name"
+        createNewOption={createItem}
+      />
+
+      <MultiSelect
+        label="Multi Select"
         placeholder="Выбери значение"
         value={valueFlat}
         onSelect={handleSelectFlat}

@@ -1,7 +1,7 @@
 .ControlWrapper {
     width: 292px;
-    height: 44px;
-    padding-left: 16px;
+    min-height: 44px;
+    padding-left: 4px;
     border-radius: 8px;
     border: 1px solid #1308171A;
     transition: box-shadow, .3s;
