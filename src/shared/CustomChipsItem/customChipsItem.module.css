@@ -1,0 +1,37 @@
+.CustomChipsItem {
+    height: 24px;
+    width: fit-content;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    background-color: #6E328C0F;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: -0.006em;
+    color: #6E328C;
+}
+
+.chipsItemImgContainer {
+    height: 22px;
+    width: 22px;
+    margin-right: 4px;
+}
+
+.chipsItemImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.closeButton {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,15 @@
+.SingleSelectControl {
+    height: 22px;
+    width: 234px;
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.012em;
+    color: #130817E5;
+    user-select: none;
+}
+
+.dimColor {
+    color: #13081766;
+}
