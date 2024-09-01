@@ -16,7 +16,7 @@ export const CustomChipsItem = ({ option, nameKey, removeOption }) => {
       <span>{defineKey(option, nameKey)}</span>
       <button
         className={styles.closeButton}
-        onClick={() => removeOption(option)}
+        onClick={(event) => removeOption(event, option)}
       >
         <img src={CrossIcon} alt="close"></img>
       </button>

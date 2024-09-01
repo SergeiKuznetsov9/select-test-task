@@ -1,4 +1,4 @@
-export let fruitsList = [
+export const fruitsList = [
   {
     name: "Apple",
     val: "apple",

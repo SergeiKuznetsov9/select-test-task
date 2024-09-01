@@ -40,6 +40,10 @@ export const SingleSelect = ({
   };
 
   const changeSelectStatus = (status) => {
+    if (disabled) {
+      return;
+    }
+
     if (!status) {
       setSearchingText("");
       inputRef.current.clear();

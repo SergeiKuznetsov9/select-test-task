@@ -74,7 +74,8 @@ export const MultiSelect = ({
     setIsOpened(status);
   };
 
-  const onRemoveOption = (option) => {
+  const onRemoveOption = (event, option) => {
+    event.stopPropagation();
     const optionName = defineKey(option, nameKey);
 
     onSelect(
