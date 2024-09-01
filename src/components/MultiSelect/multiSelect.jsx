@@ -8,7 +8,7 @@ import { MultiDropdownBlock as DefaultDropdownBlock } from "../../shared/Dropdow
 import { ListItem } from "../../shared/ListItem/listItem";
 import { CreateItem } from "../../shared/CreateItem/createItem";
 import { MultiSelectControl } from "../../shared/MultiSelectControl/multiSelectControl";
-import { ChipsItem } from "../../shared/ChipsItem/chipsItem";
+import { ChipsItem as DefaultChipsItem } from "../../shared/ChipsItem/chipsItem";
 import {
   defineIsOptionSelected,
   defineKey,
@@ -28,6 +28,7 @@ export const MultiSelect = ({
   nameKey,
   createNewOption,
   customDropdownBlock: CustomDropdownBlock,
+  chipsItem: CustomChipsItem,
 }) => {
   const [isOpened, setIsOpened] = useState(false);
   const [searchingText, setSearchingText] = useState("");
@@ -37,7 +38,7 @@ export const MultiSelect = ({
   const inputRef = useRef(null);
   const dropdownRef = useRef(null);
 
-  const isValueSelected = value && value.length;
+  const isValueSelected = Boolean(value && value.length);
 
   const handleInput = (searchingCriteria) => {
     setSearchingText(searchingCriteria.target.innerText);
@@ -105,6 +106,7 @@ export const MultiSelect = ({
   }, []);
 
   const DropdownBlockComponent = CustomDropdownBlock || DefaultDropdownBlock;
+  const ChipsItem = CustomChipsItem || DefaultChipsItem;
   return (
     <div className={styles.SingleSelect}>
       <div className={styles.label}>{label}</div>

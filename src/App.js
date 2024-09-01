@@ -1,7 +1,8 @@
 import { useState } from "react";
 // import { CustomDropdownBlock } from "./shared/CustomDropdown/customDropdownBlock";
 import { fruitsList, fruitsListFlat } from "./assets/mockData/mockData";
-import { MultiSelect } from "./components/MultiSelect/multiSelect";
+import { CustomChipsItem } from "./shared/CustomChipsItem/customChipsItem";
+import { Select } from "./components/Select/select";
 // import { SingleSelect } from "./components/SingleSelect/singleSelect";
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
         options={fruitsListFlat}
       /> */}
 
-      <MultiSelect
+      <Select
         label="Multi Select"
         placeholder="Выбери значение"
         value={value}
@@ -51,9 +52,11 @@ function App() {
         options={options}
         nameKey="name"
         createNewOption={createItem}
+        chipsItem={CustomChipsItem}
+        multiple
       />
 
-      <MultiSelect
+      <Select
         label="Multi Select"
         placeholder="Выбери значение"
         value={valueFlat}
